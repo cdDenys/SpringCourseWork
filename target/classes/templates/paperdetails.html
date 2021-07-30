@@ -1,0 +1,25 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Головна сторінка</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+</head>
+
+<body>
+<div th:insert="elements/head :: head"></div>
+<div class="container mt-5">
+    <h1>Стрічка новин</h1>
+    <div th:each="el : ${paper}" class="alert alert-info mt-2">
+        <h1 th:text="${el.title}"/>
+        <p th:text="${el.full_text}"/>
+        <p th:text="${el.tag}"/>
+        <a th:href="'/news/'+${el.id}+'/edit'"class="btn btn-outline-danger">Редагувати</a>
+        <form th:action="'/news/' +${el.id}+'/delete'" method="post">
+        <button class="btn btn-outline-danger" type="submit">Видалити</a></button>
+        </form>
+    </div>
+
+</div>
+</body>
+</html>

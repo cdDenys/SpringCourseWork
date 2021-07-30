@@ -1,0 +1,14 @@
+<div th:fragment="addelement" xmlns:th="http://www.w3.org/1999/xhtml">
+    <div class="container mt-5">
+        <h1>Додайте новину</h1>
+        <form action="/newspage/addpage" method="post">
+
+            <input type="text" name="title" placeholder="Додайте назву новини" class="form-control"><br>
+            <textarea type="text" name="full_text" placeholder="Додайте опис новини" class="form-control"></textarea><br>
+            <input type="text" name="tag" placeholder="Додайте тег" class="form-control"><br>
+            <button type="submit" class="btn btn-success">Додати</button>
+        </form>
+
+
+    </div>
+</div>
